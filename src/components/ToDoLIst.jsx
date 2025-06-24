@@ -1,6 +1,6 @@
 
 import { useState } from "react";
-import initialTodos from "./data/initialTodos";
+import initialTodos from "../data/initialTodos";
 
 import Todo from "./ToDo";
 
@@ -21,7 +21,7 @@ export default function ToDoList(){
             return t;
         });
 
-      setTodos(handlechange);
+      setTodos(changesTodos);
 
     };
 
@@ -29,7 +29,7 @@ export default function ToDoList(){
         setTodos(todos.filter((todo) => todo.id !== id));
     }
 
-    const handleAdd = () => {
+    const handleAdd = (title) => {
         setTodos([
             ...todos,
             {
@@ -49,7 +49,9 @@ export default function ToDoList(){
                 {todos.map((todo) => (
 
                     <li key={todo.id}>
-                        < Todo todo={todo} onChange={handlechange} onDelete={handleDelete} />
+                        < Todo todo={todo} 
+                        onChange={handlechange}
+                         onDelete={handleDelete} />
                     </li>
 
                 ))}
