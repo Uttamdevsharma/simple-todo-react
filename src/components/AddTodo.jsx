@@ -1,10 +1,20 @@
+import { useState } from "react";
+export default function AddTodo({onAddTodo}){
 
-export default function AddTodo(){
+    const [title , setTitle] = useState("");
     return (
         <>
          
-         <input type="text" placeholder="Add task" />
-         <button>Add</button>
+         <input 
+         type="text"
+          placeholder="Add task" 
+          onChange={(e) => setTitle(e.target.value)}
+          />
+        
+         <button onClick={() => {
+            onAddTodo(title);
+            setTitle("");
+         }}  > Add </button>
         </>
 
     );
