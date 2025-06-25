@@ -3,9 +3,10 @@ import Todo from "./ToDo";
 
 export default function ToDoList({todos,onChangeTodo,onDeleteTodo}){
     return (
-        <ul>
 
-                {todos.map((todo) => (
+        <>
+        <ul>
+             {todos.map((todo) => (
 
                     <li key={todo.id}>
                         < Todo 
@@ -19,6 +20,8 @@ export default function ToDoList({todos,onChangeTodo,onDeleteTodo}){
                 
                   
         </ul>
+
+        </>
 
     );
 }

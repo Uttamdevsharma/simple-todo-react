@@ -1,11 +1,12 @@
 import { useState } from "react";
-import ToDoList from "./ToDoLIst";
+
 
 export default function Todo({todo,onChange,onDelete}){
 
-    const [isEditing,setIsEditing] = useState(false);
+    const [isEditing, setIsEditing] = useState(false);
 
-
+ 
+    //conditional Rendering
     const todoContent = isEditing ? (
         <>
         <input type="text" value={todo.title} onChange={(e) => onChange({
