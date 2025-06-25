@@ -3,7 +3,6 @@ import Todo from "./ToDo";
 
 export default function ToDoList({todos,onChangeTodo,onDeleteTodo}){
     return (
-
         <>
         <ul>
              {todos.map((todo) => (
